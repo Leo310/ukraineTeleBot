@@ -70,6 +70,8 @@ setup(
         # eg: 'keyword1', 'keyword2', 'keyword3',
     ],
     install_requires=[
+        'python-telegram-bot',
+        'python-dotenv'
         # 'clint',
         # 'lxml',
         # 'psycopg2',
