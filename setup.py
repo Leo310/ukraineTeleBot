@@ -27,17 +27,17 @@ def read(*names, **kwargs):
 
 
 setup(
-    name='UkraineTeleBot',
+    name='UkraineTeleBots',
     version='0.1.0',
     license='BSD 2-Clause License',
-    description='Telegram Bot to connect refugees with hosts',
+    description='Telegram Bots to connect refugees with hosts',
     long_description='%s' % (
         re.compile('^.. start-badges.*^.. end-badges',
                    re.M | re.S).sub('', read('README.md'))
     ),
     author='Leonard Heininger',
     author_email='leodev310@gmail.com',
-    url='https://github.com/ionelmc/python-nameless',
+    url='git@github.com:Leo310/ukraineTeleBot.git',
     packages=find_packages('src'),
     package_dir={'': 'src'},
     py_modules=[splitext(basename(path))[0] for path in glob('src/*.py')],
@@ -85,7 +85,9 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'ukraineTeleBot = UkraineTeleBot.main:main',
+            'ukraineTeleBots = UkraineTeleBots.main:main',
+            'ukraineHostRegistratorBot = HostRegistratorBot.main:run',
+            'ukraineGeneralGroupBot = GeneralGroupBot.main:run',
         ]
     },
 )
