@@ -10,13 +10,13 @@ from Utils import logger
 
 def run():
     # logger
-    hostRegistratorLogger = logger.setupLogger("hostRegistratorLogger")
+    refugeeHelperLogger = logger.setupLogger("refugeeHelperLogger")
 
     # get api token from env
-    load_dotenv()
-    bot_api_token = os.getenv("HOSTREGISTRATOR_BOT_API_TOKEN")
+    load_dotenv(".env")
+    bot_api_token = os.getenv("REFUGEEHELPER_BOT_API_TOKEN")
     if(not bot_api_token):
-        hostRegistratorLogger.error(
+        refugeeHelperLogger.error(
             "You need to set the host registrator bot api token in the .env file. for reference lookup .env.example")
         return
 
@@ -38,8 +38,9 @@ def run():
         dispatcher.add_handler(handler)
 
     updater.start_polling()
-    hostRegistratorLogger.info("Started hostregistrator bot")
+    refugeeHelperLogger.info("Started refugeehelper bot")
     updater.idle()
+    refugeeHelperLogger.info("Terminated refugeehelper bot")
 
 
 def echo(update: Update, context: CallbackContext):

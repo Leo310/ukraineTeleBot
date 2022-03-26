@@ -13,7 +13,7 @@ def run():
     generalGroupLogger = logger.setupLogger("generalGroupLogger")
 
     # get api token from env
-    load_dotenv()
+    load_dotenv(".env")
     bot_api_token = os.getenv("GENERALGROUP_BOT_API_TOKEN")
     if(not bot_api_token):
         generalGroupLogger.error(
@@ -40,6 +40,7 @@ def run():
     updater.start_polling()
     generalGroupLogger.info("Started generalgroup bot")
     updater.idle()
+    generalGroupLogger.info("Terminated hostregistrator bot")
 
 
 def echo(update: Update, context: CallbackContext):

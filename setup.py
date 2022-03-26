@@ -85,8 +85,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'ukraineTeleBots = UkraineTeleBots.main:main',
-            'ukraineHostRegistratorBot = HostRegistratorBot.main:run',
+            'ukraineRefugeeHelperBot = RefugeeHelperBot.main:run',
             'ukraineGeneralGroupBot = GeneralGroupBot.main:run',
         ]
     },
